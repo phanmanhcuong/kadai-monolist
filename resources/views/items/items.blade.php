@@ -20,11 +20,16 @@
                                 @endif
                             </div>
                         </div>
-                        @if (isset($item->count))
-                            <div class="panel-footer">
-                                <p class="text-center">{{ $key+1 }}位: {{ $item->count }} Wants</p>
-                            </div>
-                        @endif
+                        
+                        <div class="panel-footer">
+                            @if (isset($item->countWant))
+                                <p class="text-center">{{ $key+1 }}位: {{ $item->countWant }} Wants</p>
+                            @endif
+                                                    
+                            @if (isset($item->countHave))
+                                <p class="text-center">{{ $key+1 }}位: {{ $item->countHave }} Haves</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
