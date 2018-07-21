@@ -9,7 +9,7 @@
                         <img src="{{ $item->image_url }}" alt="">
                     </div>
                     <div class="panel-body">
-                        <p class="item-title">{{ $item-> name }}</p>
+                        <p class="item-title">{{ $item->name }}</p>
                         <div class="buttons text-center">
                             @if (Auth::check())
                                 @include('items.want_button', ['item' => $item])
@@ -40,6 +40,9 @@
                         Haveしたユーザ
                     </div>
                     <div class="panel-body">
+                        @foreach($have_users as $have_user)
+                            <a href = "{{ route('users.show', $have_user->id) }}">{{ $have_user->name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
