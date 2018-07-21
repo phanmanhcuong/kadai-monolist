@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li>
-                            <a href="#">
+                            <a href="{{ route('items.create') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 アイテムを追加
                             </a>
@@ -24,7 +24,7 @@
                                 <span class="gravatar">
                                     <img src="{{ Gravatar::src(Auth::user()->email, 20) . '&d=mm' }}" alt="" class="img-circle">
                                 </span>
-                                {{ Auth::user()-name }}
+                                {{ Auth::user()->name }}
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
